@@ -21,9 +21,9 @@ const characters = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwS0SMou6Ggei4F5app7eEsXyl6h1rPFB5EzRCDaYa4A&s&ec=72940543",
   },
 ];
+
 function App() {
   return (
-    <>
     <div className="container">
       {characters.map((character, i) => (
         <Card
@@ -34,8 +34,7 @@ function App() {
           img={character.img}
         />
       ))}
-      </div>
-    </>
+    </div>
   );
 }
 

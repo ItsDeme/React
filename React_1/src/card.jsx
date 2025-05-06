@@ -1,15 +1,27 @@
-export default function Card(props){
+import { useState } from "react";
 
-function Like(){
-    console.log("Liked - ", props.name, props.clan);
-}
+export default function Card(props) {
+  const [likeCount, setLikeCount] = useState(0); 
+  const [isLiked, setIsLiked] = useState(false);
 
-    return (
-     <div className='card'>
-      <img src={props.img} alt="" />
+  const handleLikeToggle = () => {
+    if (isLiked) {
+      setLikeCount(likeCount - 1);
+    } else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsLiked(!isLiked);
+  };
+
+  return (
+    <div className="card">
+      <img src={props.img} alt={`${props.name} ${props.clan}`} />
       <p>{props.name} {props.clan}</p>
       <p>Anime name: {props.anime}</p>
-      <button onClick={() => Like(props.name)}> Like </button>
-     </div>
-    )
+      <p>Likes: {likeCount}</p>
+      <button onClick={handleLikeToggle}>
+        {isLiked ? "Liked" : "Like"}
+      </button>
+    </div>
+  );
 }

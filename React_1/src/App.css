@@ -1,6 +1,6 @@
 .card {
   width: 300px;
-  height: 370px;
+  height: fit-content;
   background-color: black;
   color: white;
   margin: 0 10px;
@@ -26,6 +26,7 @@ button{
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 button:hover{
   background-color: lightgray ;
